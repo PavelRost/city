@@ -1,0 +1,55 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: bankModule
+          uri: http://localhost:8010/
+          predicates:
+            - Path=/bank/**
+          filters:
+            - name: Token
+        - id: carModule
+          uri: http://localhost:8020/
+          predicates:
+            - Path=/car-management/**
+          filters:
+            - name: Token
+        - id: citizenModule
+          uri: http://localhost:8030/
+          predicates:
+            - Path=/citizen/**
+          filters:
+            - name: Token
+        - id: houseModule
+          uri: http://localhost:8050/
+          predicates:
+            - Path=/house/**
+          filters:
+            - name: Token
+        - id: passportModule
+          uri: http://localhost:8060/
+          predicates:
+            - Path=/passport/**
+          filters:
+            - name: Token
+        - id: schoolModule
+          uri: http://localhost:8080/
+          predicates:
+            - Path=/school/**
+          filters:
+            - name: Token
+        - id: authModule
+          uri: http://localhost:8090
+          predicates:
+            - Path=/user/**
+        - id: logModule
+          uri: http://localhost:8091
+          predicates:
+            - Path=/log/**
+          filters:
+            - name: Token
+
+server:
+  port: 8040
+
+auth-api-url: http://localhost:8090/user

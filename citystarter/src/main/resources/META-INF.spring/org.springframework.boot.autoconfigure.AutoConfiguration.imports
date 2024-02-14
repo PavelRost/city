@@ -1,0 +1,2 @@
+org.rostfactory.starter.config.KafkaAutoconfiguration
+org.rostfactory.starter.config.WebSocketAutoconfiguration

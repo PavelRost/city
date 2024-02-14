@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/micro_auth_db
+    username: postgres
+    password: 111
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+  liquibase:
+    enabled: true
+    change-log: db/changelog/db.changelog-master.yaml
+server:
+  port: 8090
+
+jwt-secret-key: zfY3aYw9Qg+A71tB6ODT5M7l7s6LtMA9LRcdNfZxA1Niyb2qci5IXEEzw6Dj44b+7m0xJTSE0q0yTF5ivaKZAA==
